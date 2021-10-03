@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header :logoImage="logo"/>
+    <Albums/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
+import Albums from './components/Albums.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Albums
   },
   data() {
     return {
