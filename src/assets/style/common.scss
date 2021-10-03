@@ -1,0 +1,20 @@
+// bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// variables
+@import './variables';
+
+// reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $mainColor;
+}
