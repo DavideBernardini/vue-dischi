@@ -31,6 +31,7 @@ export default {
         h3 {
             color: #fff;
             text-transform: uppercase;
+            word-break: break-word;
             font-size: 26px;
         }
         .author, .year {
