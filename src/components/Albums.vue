@@ -25,7 +25,7 @@ export default {
         filteredAlbums() {
             return this.albums.filter(
                 (alb) => {
-                    return alb.genre == this.gnr || alb.genre == ''
+                    return alb.genre == this.gnr || this.gnr == '';
                 }
             )
         }
