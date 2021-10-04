@@ -1,7 +1,7 @@
 <template>
     <section class="albums container pt-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gx-5">
-            <Album v-for="(album, index) in albums" :key="index" :info="album"/>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 gx-4">
+            <Album v-for="(album, index) in filteredAlbums" :key="index" :info="album"/>
         </div>
     </section>
 </template>
@@ -15,9 +15,19 @@ export default {
     components: {
         Album
     },
+    props: ['gnr'],
     data() {
         return {
             albums: []
+        }
+    },
+    computed: {
+        filteredAlbums() {
+            return this.albums.filter(
+                (alb) => {
+                    return alb.genre == this.gnr || alb.genre == ''
+                }
+            )
         }
     },
     created() {

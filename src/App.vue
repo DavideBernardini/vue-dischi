@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header :logoImage="logo"/>
-    <Albums/>
+    <Header :logoImage="logo" @select="genreSelect"/>
+    <Albums :gnr="genre"/>
   </div>
 </template>
 
@@ -17,7 +17,13 @@ export default {
   },
   data() {
     return {
-      logo: 'spotify-logo.png'
+      logo: 'spotify-logo.png',
+      genre: ''
+    }
+  },
+  methods: {
+    genreSelect(text) {
+      this.genre = text;
     }
   }
 }
@@ -26,6 +32,4 @@ export default {
 <style lang="scss">
 @import "./assets/style/common.scss";
 
-#app {
-}
 </style>

@@ -1,9 +1,9 @@
 <template>
     <div class="album col mb-4">
-        <div class="box p-5 p-sm-4">
+        <div class="box p-5 p-sm-3">
             <img :src="info.poster" :alt="info.title">
             <h3 class="text-white pt-5 pt-sm-4">{{info.title}}</h3>
-            <div class="author pt-4 pt-sm-3">{{info.author}}</div>
+            <div class="author pt-3 pt-sm-2">{{info.author}}</div>
             <div class="year">{{info.year}}</div>
         </div>
         
@@ -27,6 +27,8 @@ export default {
         height: 100%;
         img {
             width: 100%;
+            height: 50%;
+            object-fit: contain;
         }
         h3 {
             color: #fff;
