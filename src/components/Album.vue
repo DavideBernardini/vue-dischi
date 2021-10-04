@@ -1,5 +1,5 @@
 <template>
-    <div class="album col-12 col-sm-6 col-md-4 col-lg-2 mb-4 mx-lg-1 px-3 px-lg-0">
+    <div class="album col mb-4">
         <div class="box p-5 p-sm-4">
             <img :src="info.poster" :alt="info.title">
             <h3 class="text-white pt-5 pt-sm-4">{{info.title}}</h3>
@@ -32,11 +32,11 @@ export default {
             color: #fff;
             text-transform: uppercase;
             word-break: break-word;
-            font-size: 26px;
+            font-size: 1.625rem;
         }
         .author, .year {
             color: #808078;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
         }
     }
     
