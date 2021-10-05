@@ -3,10 +3,8 @@
         <img :src="require(`../assets/images/${logoImage}`)" alt="logo spotify green">
             <select name="genre_select" id="genre_select" class="form-select" v-model="inputSelect" @change="$emit('select', inputSelect)">
                 <option value="" selected>Select music genre</option>
-                <option value="Rock">Rock</option>
-                <option value="Pop">Pop</option>
-                <option value="Jazz">Jazz</option>
-                <option value="Metal">Metal</option>
+                <option v-for="(genre, index) in gnrList" :key="index" :value="genre">{{genre}}</option>
+                
         </select>
     </header>
 </template>
@@ -14,7 +12,7 @@
 <script>
 export default {
     name: 'Header',
-    props: ['logoImage'],
+    props: ['logoImage', 'gnrList'],
     data() {
         return {
             inputSelect: ''

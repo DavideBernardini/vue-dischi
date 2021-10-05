@@ -24,17 +24,25 @@ export default {
     computed: {
         filteredAlbums() {
             return this.albums.filter(
-                (alb) => {
+                alb => {
                     return alb.genre == this.gnr || this.gnr == '';
                 }
             )
-        }
+        },
     },
     created() {
         axios
             .get("https://flynn.boolean.careers/exercises/api/array/music")
             .then((res) => {
                 this.albums = res.data.response;
+
+                const genres = [];
+                this.albums.forEach( alb => {
+                    if (genres.includes(alb.genre) == false) {
+                        genres.push(alb.genre);
+                    }
+                })
+                this.$emit('generateGenres', genres)
             });
     }
 }
